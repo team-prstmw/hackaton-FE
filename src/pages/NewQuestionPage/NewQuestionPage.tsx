@@ -11,6 +11,7 @@ import { useApiSend } from "../../hooks/useApi";
 import { CREATE_QUESTION_ENDPOINT } from "../../urls/api";
 import { Navbar } from "../../components/Navbar/Navbar";
 import Label from "../../components/Forms/Label/Label";
+import { Card } from "../../components/Card/Card";
 
 interface NewQuestionData {
   content: string;
@@ -42,41 +43,44 @@ const NewQuestionPage = () => {
     apiSend({ path: CREATE_QUESTION_ENDPOINT, data: payload });
   }
 
+  const data = (
+    <FormProvider {...methods}>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
+        <div>
+          <Textarea id="content" label="Pytanie" />
+        </div>
+        <div>
+          <Label htmlFor="answer">Odpowiedź</Label>
+          <div className={styles.answersContainer}>
+            <Label>Prawda</Label>
+            <Input id="answer" type="radio" value="true" checked />
+            <Label>Fałsz</Label>
+            <Input id="answer" type="radio" value="false" />
+          </div>
+        </div>
+        <div>
+          <Textarea id="explanation" label="Wyjaśnienie" />
+        </div>
+        <div>
+          <Select id="category" label="Kategoria" />
+        </div>
+        <div>
+          <Input id="link" label="Źródło" />
+        </div>
+        <SubmitButton />
+      </form>
+    </FormProvider>
+  );
+
   return (
     <>
       <Navbar />
       <div className={styles.formContainer}>
-        <FormProvider {...methods}>
-          <form
-            className={styles.form}
-            onSubmit={handleSubmit(onSubmit)}
-            noValidate
-          >
-            <div>
-              <Textarea id="content" label="Pytanie" />
-            </div>
-            <div></div>
-            <div>
-              <Label htmlFor="answer">Odpowiedź</Label>
-              <div className={styles.answersContainer}>
-                <Label>Prawda</Label>
-                <Input id="answer" type="radio" value="true" checked />
-                <Label>Fałsz</Label>
-                <Input id="answer" type="radio" value="false" />
-              </div>
-            </div>
-            <div>
-              <Textarea id="explanation" label="Wyjaśnienie" />
-            </div>
-            <div>
-              <Select id="category" label="Kategoria" />
-            </div>
-            <div>
-              <Input id="link" label="Źródło" />
-            </div>
-            <SubmitButton />
-          </form>
-        </FormProvider>
+        <Card data={data} />
       </div>
     </>
   );

@@ -21,11 +21,11 @@
 
   box-shadow: 0px 4px 4px var(--glass-shadow-color);
 
-    display: flex;
-      justify-content: space-around;
-      align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
 
-    
   .navLinks {
     color: var(--text-color-main);
     text-decoration: none;
@@ -39,6 +39,10 @@
   .navLinks:hover {
     color: var(--text-color-secondary);
   }
+}
+
+.noUnderline {
+  text-decoration: none;
 }
 
 .navLogo {
@@ -85,7 +89,7 @@
   background-color: var(--glass-shadow-color);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
   .hamburger {
     display: block;
   }
