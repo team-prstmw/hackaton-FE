@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/answer_clarification" element={null} />
+          <Route path="/answer_clarification" element={<AnswerJustification />} />
           <Route path="" element={null} />
           <Route path="" element={null} />
           <Route path="" element={null} />
