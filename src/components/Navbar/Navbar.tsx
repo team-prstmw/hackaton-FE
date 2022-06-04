@@ -5,6 +5,10 @@ import { NEW_QUESTION_PAGE } from "../../urls/frontend";
 
 import styles from "./Navbar.module.scss";
 
+function refreshPage() {
+  window.location.reload();
+}
+
 export function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 

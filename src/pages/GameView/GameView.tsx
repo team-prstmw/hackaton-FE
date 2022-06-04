@@ -2,17 +2,18 @@ import { Dispatch, SetStateAction, useState } from "react";
 import styles from "./GameView.module.scss";
 import { Navbar } from "../../components/Navbar/Navbar";
 import question from "../../question.json";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GameOver from "../GameOver/GameOver";
 
 interface GameViewProps{
   score: number;
   setScore: Dispatch<SetStateAction<number>>
+  questID: number;
+  setQuestId: Dispatch<SetStateAction<number>>
 }
 
-function GameView({score, setScore}: GameViewProps) {
+function GameView({score, setScore, questID, setQuestId}: GameViewProps) {
   const questions = question.data;
-  const [questID, setQuestId] = useState<number>(0);
 
   const [answer, setAnswer] = useState<number | null>(null);
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ function GameView({score, setScore}: GameViewProps) {
               <div>
                 <h1 className={styles.title}>Question {id + 1}</h1>
                 <p className={styles.information}>{quest.question}</p>
-                <p className={styles.note}>True or Fake</p>
+                <p className={styles.note}><Link to={'/answer_clarification'}>Wyjaśnienie</Link></p>
               </div>
               <div className={styles.buttons}>
                 <button className={styles.buttonTrue} onClick={handleClickTrue}>

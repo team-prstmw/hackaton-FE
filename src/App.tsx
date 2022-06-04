@@ -16,20 +16,21 @@ const queryClient = new QueryClient();
 
 function App() {
   const [score, setScore] = useState<number>(0);
-
+  const [questID, setQuestId] = useState<number>(0);
+  
   return (
-    <div className={styles.App}>
+    <div className={styles.App}>  
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route
               path="/answer_clarification"
-              element={<AnswerJustification />}
+              element={<AnswerJustification questID={questID}/>}
             />
             <Route
               path="/quiz"
-              element={<GameView score={score} setScore={setScore} />}
+              element={<GameView score={score} setScore={setScore} questID={questID} setQuestId={setQuestId}/>}
             />
             <Route path="/score" element={<GameOver score={score} />} />
             <Route path="/top_scores" element={<TopScores />} />
