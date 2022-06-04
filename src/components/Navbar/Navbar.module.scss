@@ -21,11 +21,11 @@
 
   box-shadow: 0px 4px 4px var(--glass-shadow-color);
 
-    display: flex;
-      justify-content: space-around;
-      align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
 
-    
   .navLinks {
     color: var(--text-color-main);
     text-decoration: none;
