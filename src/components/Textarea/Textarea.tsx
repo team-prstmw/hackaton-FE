@@ -1,5 +1,7 @@
+import styles from "./Textarea.module.scss";
+
 const Textarea = () => {
-  return <textarea />;
+  return <textarea className={styles.textarea} />;
 };
 
 export default Textarea;

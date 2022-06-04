@@ -1,0 +1,6 @@
+@import "/src/components/common.scss";
+
+.textarea {
+  @extend .form-element--basic;
+  height: 10rem;
+}

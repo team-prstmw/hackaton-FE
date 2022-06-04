@@ -1,5 +1,6 @@
 @import "/src/components/common.scss";
 
-.input {
+.select {
   @extend .form-element--basic;
+  background: white;
 }
