@@ -8,15 +8,30 @@
           var(--bg-color-gradient-two) 70%,
             var(--bg-color-gradient-three) 100%);
 
-  display: flex;
-    flex-direction: column;
-      justify-content: space-between;
 
   text-align: center;
   color: var(--text-color-main);
   position: relative;
 
   font-family: "Roboto", sans-serif;
+
+  .homepageText {
+    max-width: 50rem;
+    padding: 2rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  .fnnName {
+    margin-top: 5rem;
+    margin-bottom: 7.5rem;
+  }
 
   .fnn {
     font-family: "Merienda", cursive;
@@ -25,13 +40,44 @@
   }
 
   .fnnDesc {
-    font-size: 1.5625rem;
     position: relative;
+    margin-top: -1rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .missinf {
     position: relative;
-    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 900px) {
+    .centerCard {
+      display: flex;
+      justify-content: center;
+    }
+
+    .missinf {
+      width: 90%;
+    }
+
+    .fnnName {
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .missinf {
+      margin-bottom: 1.5rem;
+    }
+
+    .fnnName {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
   }
 }
 
