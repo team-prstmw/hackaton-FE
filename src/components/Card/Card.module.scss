@@ -1,13 +1,14 @@
 .card {
   background: linear-gradient(
+
     45deg,
     var(--glass-bg-color-one) 0%,
     var(--glass-bg-color-two) 50%,
     var(--glass-bg-color-three) 100%
   );
 
-  box-shadow: 4px 4px 4px var(--glass-shadow-color);
 
+  box-shadow: 4px 4px 4px var(--glass-shadow-color);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
