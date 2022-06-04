@@ -3,6 +3,7 @@ import { CATEGORIES } from "../constants/forms";
 
 const NewQuestionValidation = Yup.object({
   content: Yup.string().required(),
+  answer: Yup.boolean().required(),
   explanation: Yup.string().required(),
   category: Yup.string().oneOf(CATEGORIES).required(),
   link: Yup.string().required(),
