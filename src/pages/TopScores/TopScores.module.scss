@@ -1,4 +1,28 @@
+.glassPadding {
+  padding: 2rem 4rem;
+}
+
 .container {
-    display: flex;
-    justify-content: center;
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.hofTitle {
+  text-align: center;
+  color: var(--text-color-main);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.scoresTable {
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--text-color-main);
+  text-shadow: 1px 1px 2px var(--glass-shadow-color);
+  min-width: 30rem;
+
+  display: flex;
 }

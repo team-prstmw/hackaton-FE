@@ -1,0 +1,5 @@
+@import "/src/components/Forms/common.scss";
+
+.input {
+  @extend .form-field--basic;
+}
