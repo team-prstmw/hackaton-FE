@@ -1,0 +1,40 @@
+@import "../../theme.module.scss";
+
+.rulesPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  color: var(--text-color-main);
+
+  font-family: "Roboto", sans-serif;
+  .rulesDescriptionContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background: linear-gradient(
+      45deg,
+      var(--glass-bg-color-one) 0%,
+      var(--glass-bg-color-two) 50%,
+      var(--glass-bg-color-three) 100%
+    );
+
+    box-shadow: 0px 4px 4px var(--glass-shadow-color);
+    width: 50%;
+    border-radius: 3rem;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
+
+    .rulesDescription {
+      font-size: 1.5rem;
+      color: white;
+      padding: 1.5rem;
+      width: 80%;
+    }
+  }
+}

@@ -8,6 +8,7 @@ import GameOver from "./pages/GameOver/GameOver";
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import NewQuestionPage from "./pages/NewQuestionPage/NewQuestionPage";
+import { RulesPage } from "./pages/RulesPage/RulesPage";
 
 import styles from "./App.module.scss";
 import { NEW_QUESTION_PAGE } from "./urls/frontend";
@@ -34,7 +35,7 @@ function App() {
             <Route path="/score" element={<GameOver score={score} />} />
             <Route path="/top_scores" element={<TopScores />} />
             <Route path={NEW_QUESTION_PAGE} element={<NewQuestionPage />} />
-            <Route path="" element={null} />
+            <Route path="/rules" element={<RulesPage />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

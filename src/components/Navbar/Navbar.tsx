@@ -13,7 +13,7 @@ export function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <div className={styles.navbar} onClick={refreshPage}>
+    <div className={styles.navbar}>
       {window.location.pathname !== "/" ? (
         <Link to="/" className={styles.noUnderline}>
           <div className={styles.navLogo}>
@@ -33,7 +33,7 @@ export function Navbar() {
         <Link className={styles.navLinks} to="/quiz">
           Graj
         </Link>
-        <Link className={styles.navLinks} to="">
+        <Link className={styles.navLinks} to="/rules">
           Zasady
         </Link>
         <Link className={styles.navLinks} to="/top_scores">
