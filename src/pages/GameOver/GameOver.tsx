@@ -1,12 +1,13 @@
 import { FormEvent, useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import styles from "./GameOver.module.scss";
+import { SkillBar } from "../../components/SkillBar/SkillBar";
 
 interface GameOverProps {
   score: number;
 }
 
-function GameOver({score} : GameOverProps) {
+function GameOver({ score }: GameOverProps) {
   const [name, setName] = useState<string>("");
   console.log(score);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -23,6 +24,12 @@ function GameOver({score} : GameOverProps) {
         <p className={styles.link}>
           Link to the websites how to avoid fake news
         </p>
+        <div>
+          <SkillBar category="Polityka" level={50} />
+          <SkillBar category="Polityka" level={50} />
+          <SkillBar category="Polityka" level={50} />
+        </div>
+
         <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label} htmlFor="name">
             Podaj swoje imię:{" "}

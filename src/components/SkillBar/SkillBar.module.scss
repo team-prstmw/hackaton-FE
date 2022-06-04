@@ -1,0 +1,19 @@
+.skillBar {
+  display: flex;
+  width: 50%;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  flex-direction: column;
+  margin: 0.5rem auto;
+  .skillBarName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .skillBarLevel {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1rem;
+  }
+}
