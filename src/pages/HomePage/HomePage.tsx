@@ -1,6 +1,5 @@
 import { Navbar } from "../../components/Navbar/Navbar";
 import styles from "./HomePage.module.scss";
-import GameView from "../GameView/GameView";
 import { Card } from "../../components/Card/Card";
 
 export function HomePage() {
