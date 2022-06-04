@@ -15,7 +15,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  z-index: 999;
+  z-index: 100;
+  position: relative;
 
   .navLinks {
     color: var(--text-color-main);
@@ -80,7 +81,7 @@
   background-color: var(--glass-shadow-color);
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 944px) {
   .hamburger {
     display: block;
   }
