@@ -1,10 +1,14 @@
-import { FormEvent, FormEventHandler, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import styles from "./GameOver.module.scss";
 
-function GameOver() {
-  const [name, setName] = useState<string>("");
+interface GameOverProps {
+  score: number;
+}
 
+function GameOver({score} : GameOverProps) {
+  const [name, setName] = useState<string>("");
+  console.log(score);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setName("");
@@ -15,7 +19,7 @@ function GameOver() {
       <Navbar />
 
       <div className={styles.squereScore}>
-        <h3 className={styles.title}>Your Score 5/20</h3>
+        <h3 className={styles.title}>Your Score {score}/10</h3>
         <p className={styles.link}>
           Link to the websites how to avoid fake news
         </p>
