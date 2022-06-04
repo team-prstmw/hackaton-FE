@@ -9,13 +9,13 @@ export function Navbar() {
           <p className={styles.navFnnDesc}>Fake News Network</p>
         </div>
       ) : null}
-      <a className={styles.navLinks} href="">
+      <a className={styles.navLinks} href="/quiz">
         Play
       </a>
       <a className={styles.navLinks} href="">
         Rules
       </a>
-      <a className={styles.navLinks} href="">
+      <a className={styles.navLinks} href="/top_scores">
         Top Scores
       </a>
       <a className={styles.navLinks} href="">

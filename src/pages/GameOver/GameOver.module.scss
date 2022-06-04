@@ -1,0 +1,50 @@
+.GameOver {
+    background: linear-gradient(45deg, rgba(37,195,205,1) 0%, rgba(12,149,226,0.79) 50%, rgba(0,49,250,1) 100%);
+    color: #fff;
+    height: 100vh;
+
+    .squereScore{
+        width: 65rem;
+        height: 35rem;
+        background: linear-gradient(225deg, rgba(253,253,253,0.5) 0%, rgba(253,253,253,0.42) 45%, rgba(253,253,253,0.28) 100%);
+        margin: 5rem auto 0 auto;
+        border-radius: 2rem;
+    }
+
+    .title{
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 3rem;
+    }
+
+    .link{
+        text-align: center;
+        font-weight: bold;
+        padding-top: 4rem;
+    }
+
+    .form{
+        width: 20rem;
+        margin: 0 auto;
+        margin-top: 4rem;
+    }
+
+    .label{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .input{
+        width: 90%;
+        height: 2rem;
+        margin-bottom: 1.2rem;
+        font-size: 1.2rem;
+    }
+
+    .button{
+        padding: 0.5rem;
+        border-radius: 0.4rem;
+        cursor: pointer;
+    }
+}
