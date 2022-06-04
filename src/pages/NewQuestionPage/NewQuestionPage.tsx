@@ -1,13 +1,13 @@
 import { FormProvider, useForm } from "react-hook-form";
-import Input from "../../components/Input/Input";
-import Textarea from "../../components/Textarea/Textarea";
-import Select from "../../components/Select/Select";
+import Input from "../../components/Forms/Input/Input";
+import Textarea from "../../components/Forms/Textarea/Textarea";
+import Select from "../../components/Forms/Select/Select";
 import styles from "./NewQuestionPage.module.scss";
-import Label from "../../components/Label/Label";
+import Label from "../../components/Forms/Label/Label";
 import { CATEGORIES } from "../../constants/forms";
 import { yupResolver } from "@hookform/resolvers/yup";
 import NewQuestionValidation from "../../validation/NewQuestionValidation";
-import SubmitButton from "../../components/SubmitButton/SubmitButton";
+import SubmitButton from "../../components/Forms/SubmitButton/SubmitButton";
 
 interface NewQuestionData {
   content: string;

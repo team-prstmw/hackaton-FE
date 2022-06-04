@@ -1,6 +1,6 @@
 import { FC, SelectHTMLAttributes } from "react";
 import { useFormContext } from "react-hook-form";
-import { CATEGORIES } from "../../constants/forms";
+import { CATEGORIES } from "../../../constants/forms";
 import Label from "../Label/Label";
 import ValidationMessage from "../ValidationMessage/ValidationMessage";
 import styles from "./Select.module.scss";
