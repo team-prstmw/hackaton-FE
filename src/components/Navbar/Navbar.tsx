@@ -1,6 +1,8 @@
+import styles from "./Navbar.module.scss";
+
 export function Navbar() {
   return (
-    <div>
+    <div className={styles.navbar}>
       <a href="">Play</a>
       <a href="">Rules</a>
       <a href="">Top Scores</a>
