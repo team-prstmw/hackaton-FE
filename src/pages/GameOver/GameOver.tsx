@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { useApiSend } from "../../hooks/useApi";
@@ -13,7 +13,7 @@ function GameOver({ score }: GameOverProps) {
   const [name, setName] = useState<string>("");
   const [disabled, setDiseabled] = useState<boolean>(true);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { mutate: apiSend, isSuccess } = useApiSend();
 
@@ -27,8 +27,11 @@ function GameOver({ score }: GameOverProps) {
       score: score,
     };
     apiSend({ path: SCORES_ENDPOINT, data: payload });
-    isSuccess && navigate("/top_scores");
   };
+
+  useEffect(() => {
+    isSuccess && navigate("/top_scores");
+  }, [navigate, isSuccess]);
 
   return (
     <div className={styles.GameOver}>

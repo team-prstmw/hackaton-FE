@@ -1,9 +1,14 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTable, usePagination } from "react-table";
 
 import styles from "./TopScoresTable.module.scss";
 import { useApiGet } from "../../hooks/useApi";
 import { SCORES_ENDPOINT } from "../../urls/api";
+
+interface Highscore {
+  username: string;
+  score: number;
+}
 
 function Table({ columns, data }: any) {
   const { getTableProps, getTableBodyProps, headerGroups, page, prepareRow } =
@@ -44,6 +49,7 @@ function Table({ columns, data }: any) {
 }
 
 export function TopScoresTable() {
+  const [highscores, setHighscores] = useState<Highscore[]>([]);
   const columns = useMemo(
     () => [
       {
@@ -60,7 +66,10 @@ export function TopScoresTable() {
 
   const { data: payload } = useApiGet({ path: SCORES_ENDPOINT });
 
-  const data = [...payload].sort((a, b) => (a.score < b.score ? 1 : -1));
+  useEffect(() => {
+    const data = [...payload].sort((a, b) => (a.score < b.score ? 1 : -1));
+    setHighscores(data);
+  }, [payload]);
 
-  return <Table columns={columns} data={data} />;
+  return highscores.length && <Table columns={columns} data={highscores} />;
 }
