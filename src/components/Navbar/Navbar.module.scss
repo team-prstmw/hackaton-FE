@@ -21,10 +21,11 @@
 
   box-shadow: 0px 4px 4px var(--glass-shadow-color);
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+      justify-content: space-around;
+      align-items: center;
 
+    
   .navLinks {
     color: var(--text-color-main);
     text-decoration: none;
@@ -32,6 +33,7 @@
     font-family: "Roboto", sans-serif;
     text-shadow: 2px 2px 0px var(--glass-shadow-color);
     cursor: pointer;
+    margin: 2rem;
   }
 
   .navLinks:hover {
@@ -61,4 +63,47 @@
   font-size: 0.75rem;
   font-weight: 700;
   text-shadow: 1px 1px 0px var(--glass-shadow-color);
+}
+
+.hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: var(--glass-shadow-color);
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navLinksContainer {
+    display: none;
+  }
+
+  .navLinksContainer_expanded {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--bg-color-gradient-two);
+  }
 }
