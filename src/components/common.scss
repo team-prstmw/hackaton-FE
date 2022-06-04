@@ -1,4 +1,4 @@
-.form-element--basic {
+.form-field--basic {
   padding: 0.8rem;
   border: solid 1px black;
   border-radius: 8px;
@@ -6,7 +6,7 @@
   font-size: 1rem;
   outline: none;
 
-  // &.validation-error {
-  //     border: solid 1px $danger;
-  // }
+  &.validationError {
+    //   border: solid 1px $danger;
+  }
 }
