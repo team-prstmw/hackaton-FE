@@ -2,13 +2,13 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-import { HomePage } from "./pages/HomePage/HomePage";
+import NewQuestionPage from "./pages/NewQuestionPage/NewQuestionPage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <HomePage />
+        <NewQuestionPage />
       </header>
     </div>
   );
