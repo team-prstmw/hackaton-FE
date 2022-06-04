@@ -54,7 +54,7 @@ export function TopScoresTable() {
     () => [
       {
         Header: "Name",
-        accessor: "name",
+        accessor: "username",
       },
       {
         Header: "Score",
