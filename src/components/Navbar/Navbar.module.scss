@@ -11,6 +11,8 @@
     var(--glass-bg-color-three) 100%
   );
 
+  backdrop-filter: blur(1px);
+
   border: 1px solid
     linear-gradient(
       180deg,
@@ -24,15 +26,34 @@
   justify-content: space-around;
   align-items: center;
 
-  a {
+  .navLinks {
     color: var(--text-color-main);
     text-decoration: none;
     font-size: 1.5rem;
     font-family: "Roboto", sans-serif;
     text-shadow: 2px 2px 0px var(--glass-shadow-color);
+    cursor: pointer;
   }
 
-  a:hover {
+  .navLinks:hover {
     color: var(--text-color-secondary);
   }
+}
+
+.navLogo:hover {
+  color: var(--text-color-secondary);
+  cursor: pointer;
+}
+
+.navFnn {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: -0.5rem;
+  text-shadow: 2px 2px 0px var(--glass-shadow-color);
+}
+
+.navFnnDesc {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 0px var(--glass-shadow-color);
 }
