@@ -71,5 +71,5 @@ export function TopScoresTable() {
     setHighscores(data);
   }, [payload]);
 
-  return highscores.length && <Table columns={columns} data={highscores} />;
+  return <Table columns={columns} data={highscores} />;
 }
