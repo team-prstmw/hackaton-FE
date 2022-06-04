@@ -1,0 +1,33 @@
+.table {
+    border-collapse: collapse;
+    margin: 2rem;
+    font-size: 0.9em;
+    min-width: 15rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    font-weight: bold;
+
+    thead {
+        background-color: #f3f3f3;
+        font-size: 1.1rem;
+    }
+
+    tr {
+        :last-child {
+            td {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    th,
+    td {
+        margin: 0;
+        padding: 0.5rem;
+        border: 0.1rem solid #000;
+    }
+}

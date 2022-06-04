@@ -1,6 +1,4 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import { TopScores } from "./pages/TopScores/TopScores";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
@@ -13,7 +11,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/answer_clarification" element={null} />
           <Route path="/hi" element={<HomePage />} />
-          <Route path="" element={null} />
+          <Route path="/top_scores" element={<TopScores />} />
           <Route path="" element={null} />
           <Route path="" element={null} />
         </Routes>
