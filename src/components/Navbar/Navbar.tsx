@@ -15,7 +15,7 @@ export function Navbar() {
   return (
     <div className={styles.navbar}>
       {window.location.pathname !== "/" ? (
-        <Link to="/">
+        <Link to="/" className={styles.noUnderline}>
           <div className={styles.navLogo}>
             <p className={styles.navFnn}>FNN</p>
             <p className={styles.navFnnDesc}>Fake News Network</p>
@@ -33,7 +33,7 @@ export function Navbar() {
         <Link className={styles.navLinks} to="/quiz">
           Graj
         </Link>
-        <Link className={styles.navLinks} to="">
+        <Link className={styles.navLinks} to="/rules">
           Zasady
         </Link>
         <Link className={styles.navLinks} to="/top_scores">

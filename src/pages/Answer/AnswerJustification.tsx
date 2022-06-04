@@ -9,9 +9,8 @@ interface AnswerJustificationProps{
 }
 
 const justification = {
-  "explanationDescription": "hahahah",
-  "detailsLink": "https://www.google.com",
-  
+  explanationDescription: "hahahah",
+  detailsLink: "https://www.google.com",
 };
 // export function AnswerJustification() {
 export function AnswerJustification({questID}: AnswerJustificationProps) {
@@ -26,7 +25,6 @@ export function AnswerJustification({questID}: AnswerJustificationProps) {
     };
     fetchData();
   }, [explanation, explanationLink]);
-  
 
   return (
     <div className={styles.answerJustificationPage}>
@@ -38,8 +36,13 @@ export function AnswerJustification({questID}: AnswerJustificationProps) {
           sunt accusamus et accusantium? Iure quo tenetur excepturi iste fugiat
           vel ipsum.
           {explanation}
-        </p>        
-        <a className={styles.answerExplanationLink} href={explanationLink} target="_blank" rel="noopener noreferrer">
+        </p>
+        <a
+          className={styles.answerExplanationLink}
+          href={explanationLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Czytaj więcej
         </a>
         <Link className={styles.nextQuestion} to={"/quiz"}>

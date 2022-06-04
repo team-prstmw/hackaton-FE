@@ -97,6 +97,11 @@
       }
     }
 
+    .nextQuestionButton,
+    .answerExplanationLink {
+      text-shadow: 1px 1px 0px var(--glass-shadow-color);
+    }
+
     .nextQuestion {
       grid-area: 2 / 3 / 3 / 4;
     }
