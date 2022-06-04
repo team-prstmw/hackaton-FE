@@ -8,6 +8,8 @@ import { CATEGORIES } from "../../constants/forms";
 import { yupResolver } from "@hookform/resolvers/yup";
 import NewQuestionValidation from "../../validation/NewQuestionValidation";
 import SubmitButton from "../../components/Forms/SubmitButton/SubmitButton";
+import { useApiSend } from "../../hooks/useApi";
+import { CREATE_QUESTION_ENDPOINT } from "../../urls/api";
 
 interface NewQuestionData {
   content: string;
@@ -23,8 +25,11 @@ const NewQuestionPage = () => {
   });
   const { handleSubmit } = methods;
 
+  const { mutate: apiSend, isSuccess, isError } = useApiSend();
+  console.log(isSuccess, isError)
+
   function onSubmit(data: NewQuestionData) {
-    console.log(data);
+    apiSend({ path: CREATE_QUESTION_ENDPOINT, data: data });
   }
 
   return (

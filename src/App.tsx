@@ -2,14 +2,19 @@
 // import logo from './logo.svg';
 // import './App.css';
 
+import { QueryClient, QueryClientProvider } from "react-query";
 import NewQuestionPage from "./pages/NewQuestionPage/NewQuestionPage";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <NewQuestionPage />
-      </header>
+      <QueryClientProvider client={queryClient}>
+        <header className="App-header">
+          <NewQuestionPage />
+        </header>
+      </QueryClientProvider>
     </div>
   );
 }
