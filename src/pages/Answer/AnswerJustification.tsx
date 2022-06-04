@@ -4,7 +4,9 @@ import { getById } from "../../utils/read";
 import styles from "./AnswerJustification.module.scss";
 import { Navbar } from "../../components/Navbar/Navbar";
 
-
+interface AnswerJustificationProps{
+  questID: number;
+}
 
 const justification = {
   "explanationDescription": "hahahah",
@@ -12,7 +14,7 @@ const justification = {
   
 };
 // export function AnswerJustification() {
-export function AnswerJustification(questionId: number) {
+export function AnswerJustification({questID}: AnswerJustificationProps) {
   const [explanation, setExplanation] = useState("");
   const [explanationLink, setExplanationLink] = useState("");
 
@@ -40,9 +42,9 @@ export function AnswerJustification(questionId: number) {
         <a className={styles.answerExplanationLink} href={explanationLink} target="_blank" rel="noopener noreferrer">
           Czytaj więcej
         </a>
-        <Link className={styles.nextQuestion} to={"wp.pl"}  >
+        <Link className={styles.nextQuestion} to={"/quiz"}>
           <button className={styles.nextQuestionButton}>
-            Następne pytanie
+            Wróć do pytania
           </button>
         </Link>
       </div>

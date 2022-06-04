@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 
+function refreshPage() {
+  window.location.reload();
+}
+
 export function Navbar() {
+
   return (
-    <div className={styles.navbar}>
+    <div className={styles.navbar} onClick={refreshPage}>
       {window.location.pathname !== "/" ? (
         <Link to="/">
           <div className={styles.navLogo}>

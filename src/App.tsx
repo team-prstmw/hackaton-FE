@@ -11,7 +11,8 @@ import styles from "./App.module.scss";
 
 function App() {
   const [score, setScore] = useState<number>(0);
-
+  const [questID, setQuestId] = useState<number>(0);
+  
   return (
     <div className={styles.App}>
       <BrowserRouter>
@@ -19,11 +20,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route
             path="/answer_clarification"
-            element={<AnswerJustification />}
+            element={<AnswerJustification questID={questID}/>}
           />
           <Route
             path="/quiz"
-            element={<GameView score={score} setScore={setScore} />}
+            element={<GameView score={score} setScore={setScore} questID={questID} setQuestId={setQuestId}/>}
           />
           <Route path="/score" element={<GameOver score={score} />} />
           <Route path="/top_scores" element={<TopScores />} />
