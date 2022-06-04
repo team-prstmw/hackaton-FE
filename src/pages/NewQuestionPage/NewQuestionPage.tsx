@@ -10,6 +10,7 @@ import NewQuestionValidation from "../../validation/NewQuestionValidation";
 import SubmitButton from "../../components/Forms/SubmitButton/SubmitButton";
 import { useApiSend } from "../../hooks/useApi";
 import { CREATE_QUESTION_ENDPOINT } from "../../urls/api";
+import { Navbar } from "../../components/Navbar/Navbar";
 
 interface NewQuestionData {
   content: string;
@@ -26,37 +27,40 @@ const NewQuestionPage = () => {
   const { handleSubmit } = methods;
 
   const { mutate: apiSend, isSuccess, isError } = useApiSend();
-  console.log(isSuccess, isError)
+  console.log(isSuccess, isError);
 
   function onSubmit(data: NewQuestionData) {
     apiSend({ path: CREATE_QUESTION_ENDPOINT, data: data });
   }
 
   return (
-    <div className={styles.formContainer}>
-      <FormProvider {...methods}>
-        <form
-          className={styles.form}
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
-        >
-          <div>
-            <Textarea id="content" label="Pytanie" />
-          </div>
-          <Label>Odpowiedzi</Label>
-          <div>
-            <Textarea id="explanation" label="Wyjaśnienie" />
-          </div>
-          <div>
-            <Select id="category" label="Kategoria" />
-          </div>
-          <div>
-            <Input id="link" label="Źródło" />
-          </div>
-          <SubmitButton />
-        </form>
-      </FormProvider>
-    </div>
+    <>
+      <Navbar />
+      <div className={styles.formContainer}>
+        <FormProvider {...methods}>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+          >
+            <div>
+              <Textarea id="content" label="Pytanie" />
+            </div>
+            <Label>Odpowiedzi</Label>
+            <div>
+              <Textarea id="explanation" label="Wyjaśnienie" />
+            </div>
+            <div>
+              <Select id="category" label="Kategoria" />
+            </div>
+            <div>
+              <Input id="link" label="Źródło" />
+            </div>
+            <SubmitButton />
+          </form>
+        </FormProvider>
+      </div>
+    </>
   );
 };
 
