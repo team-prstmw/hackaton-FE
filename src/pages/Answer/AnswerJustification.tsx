@@ -4,12 +4,9 @@ import { getById } from "../../utils/read";
 import styles from "./AnswerJustification.module.scss";
 import { Navbar } from "../../components/Navbar/Navbar";
 
-
-
 const justification = {
-  "explanationDescription": "hahahah",
-  "detailsLink": "https://www.google.com",
-  
+  explanationDescription: "hahahah",
+  detailsLink: "https://www.google.com",
 };
 // export function AnswerJustification() {
 export function AnswerJustification(questionId: number) {
@@ -24,7 +21,6 @@ export function AnswerJustification(questionId: number) {
     };
     fetchData();
   }, [explanation, explanationLink]);
-  
 
   return (
     <div className={styles.answerJustificationPage}>
@@ -36,11 +32,16 @@ export function AnswerJustification(questionId: number) {
           sunt accusamus et accusantium? Iure quo tenetur excepturi iste fugiat
           vel ipsum.
           {explanation}
-        </p>        
-        <a className={styles.answerExplanationLink} href={explanationLink} target="_blank" rel="noopener noreferrer">
+        </p>
+        <a
+          className={styles.answerExplanationLink}
+          href={explanationLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Czytaj więcej
         </a>
-        <Link className={styles.nextQuestion} to={"wp.pl"}  >
+        <Link className={styles.nextQuestion} to={"wp.pl"}>
           <button className={styles.nextQuestionButton}>
             Następne pytanie
           </button>
