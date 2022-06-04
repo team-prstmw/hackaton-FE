@@ -7,11 +7,13 @@ import GameView from "./pages/GameView/GameView";
 import GameOver from "./pages/GameOver/GameOver";
 import { useState } from "react";
 
+import styles from "./App.module.scss";
+
 function App() {
   const [score, setScore] = useState<number>(0);
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />

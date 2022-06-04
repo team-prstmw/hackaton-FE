@@ -39,6 +39,12 @@
   }
 }
 
+.navLogo {
+  color: var(--text-color-main);
+  text-align: center;
+  font-family: "Merienda", cursive;
+}
+
 .navLogo:hover {
   color: var(--text-color-secondary);
   cursor: pointer;
