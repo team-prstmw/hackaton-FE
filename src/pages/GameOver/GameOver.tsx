@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { Link } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
 import styles from "./GameOver.module.scss";
 
@@ -6,7 +7,7 @@ interface GameOverProps {
   score: number;
 }
 
-function GameOver({score} : GameOverProps) {
+function GameOver({ score }: GameOverProps) {
   const [name, setName] = useState<string>("");
   console.log(score);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -34,9 +35,11 @@ function GameOver({score} : GameOverProps) {
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
-          <button type="submit" className={styles.button}>
-            Save your score
-          </button>
+          <Link to="/top_scores">
+            <button type="submit" className={styles.button}>
+              Save your score
+            </button>
+          </Link>
         </form>
       </div>
     </div>

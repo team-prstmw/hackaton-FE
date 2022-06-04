@@ -5,11 +5,15 @@ import { NEW_QUESTION_PAGE } from "../../urls/frontend";
 
 import styles from "./Navbar.module.scss";
 
+function refreshPage() {
+  window.location.reload();
+}
+
 export function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <div className={styles.navbar}>
+    <div className={styles.navbar} onClick={refreshPage}>
       {window.location.pathname !== "/" ? (
         <Link to="/" className={styles.noUnderline}>
           <div className={styles.navLogo}>
