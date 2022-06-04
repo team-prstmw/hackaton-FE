@@ -3,11 +3,21 @@
   justify-content: center;
   padding: 1rem;
   width: 100%;
+
+  color: var(--text-color-main);
+  font-weight: 400;
+  margin-top: 1rem;
 }
 
 .form {
-  width: 100%;
+  width: 100rem;
   max-width: 360px;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 450px) {
+  .form {
+    width: 100%;
+  }
 }
