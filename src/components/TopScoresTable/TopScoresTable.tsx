@@ -65,11 +65,9 @@ export function TopScoresTable() {
   );
 
   const { data: payload } = useApiGet({ path: SCORES_ENDPOINT });
-  console.log(payload);
-
   useEffect(() => {
     const data = payload
-      ? [...payload].sort((a, b) => (a.score < b.score ? 1 : -1))
+      ? [...payload.data].sort((a, b) => (a.score < b.score ? 1 : -1))
       : [];
     setHighscores(data);
   }, [payload]);
