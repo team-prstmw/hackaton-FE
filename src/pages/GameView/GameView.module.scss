@@ -57,9 +57,9 @@
     .buttonFalse {
       background: linear-gradient(
         225deg,
-        rgba(239, 25, 25, 0.76) 0%,
-        rgba(249, 28, 28, 0.61) 82%,
-        rgba(243, 34, 34, 0.47) 100%
+        rgba(239, 25, 25, 0.912) 0%,
+        rgba(249, 28, 28, 0.723) 82%,
+        rgba(243, 34, 34, 0.602) 100%
       );
       font-size: 4.5rem;
       font-weight: 700;
@@ -72,7 +72,7 @@
     }
 
     .buttonFalse:hover {
-      background: #df0000b6;
+      background: #df0000cf;
       cursor: pointer;
     }
   }
