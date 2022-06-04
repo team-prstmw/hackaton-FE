@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/answer_clarification" element={null} />
-          <Route path="/hi" element={<HomePage />} />
+          <Route path="/" element={null} />
           <Route path="" element={null} />
           <Route path="" element={null} />
           <Route path="" element={null} />
