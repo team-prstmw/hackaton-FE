@@ -3,7 +3,7 @@ import styles from "./Navbar.module.scss";
 export function Navbar() {
   return (
     <div className={styles.navbar}>
-      {window.location.hostname === "/" ? (
+      {window.location.pathname !== "/" ? (
         <div className={styles.navLogo}>
           <p className={styles.navFnn}>FNN</p>
           <p className={styles.navFnnDesc}>Fake News Network</p>
