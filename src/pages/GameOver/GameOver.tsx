@@ -9,9 +9,11 @@ interface GameOverProps {
 
 function GameOver({ score }: GameOverProps) {
   const [name, setName] = useState<string>("");
-  console.log(score);
+  const [disabled, setDiseabled] = useState<boolean>(true);
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setDiseabled(true);
     setName("");
   };
 
@@ -33,10 +35,13 @@ function GameOver({ score }: GameOverProps) {
             type="text"
             id="name"
             value={name}
-            onChange={(event) => setName(event.target.value)}
+            onChange={(event) => {
+              setDiseabled(false);
+              setName(event.target.value);
+            }}
           />
           <Link to="/top_scores">
-            <button type="submit" className={styles.button}>
+            <button disabled={disabled} type="submit" style={{ cursor: `${disabled ? 'default' : 'pointer'}` }} className={styles.button}>
               Save your score
             </button>
           </Link>
