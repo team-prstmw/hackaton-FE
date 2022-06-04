@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-
 
 import { Link } from "react-router-dom";
 import { NEW_QUESTION_PAGE } from "../../urls/frontend";
@@ -28,20 +26,25 @@ export function Navbar() {
             : styles.navLinksContainer
         }
       >
-        <a className={styles.navLinks} href="">
-          Play
-        </a>
-        <a className={styles.navLinks} href="">
-          Rules
-        </a>
-        <a className={styles.navLinks} href="">
-          Top Scores
-        </a>
-        <a className={styles.navLinks} href="">
-          Add question
-        </a>
-        <a className={styles.navLinks} href="">
-          Exit
+        <Link className={styles.navLinks} to="/quiz">
+          Graj
+        </Link>
+        <Link className={styles.navLinks} to="">
+          Zasady
+        </Link>
+        <Link className={styles.navLinks} to="/top_scores">
+          Najlepsze wyniki
+        </Link>
+        <Link className={styles.navLinks} to={NEW_QUESTION_PAGE}>
+          Dodaj pytanie
+        </Link>
+        <a
+          className={styles.navLinks}
+          href="https://www.tvp.info/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wyjdź
         </a>
       </div>
 
@@ -64,28 +67,6 @@ export function Navbar() {
           />
         </svg>
       </button>
-
-      <Link className={styles.navLinks} to="/quiz">
-        Graj
-      </Link>
-      <Link className={styles.navLinks} to="">
-        Zasady
-      </Link>
-      <Link className={styles.navLinks} to="/top_scores">
-        Najlepsze wyniki
-      </Link>
-      <Link className={styles.navLinks} to={NEW_QUESTION_PAGE}>
-        Dodaj pytanie
-      </Link>
-      <a
-        className={styles.navLinks}
-        href="https://www.tvp.info/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Wyjdź
-      </a>
-
     </div>
   );
 }
