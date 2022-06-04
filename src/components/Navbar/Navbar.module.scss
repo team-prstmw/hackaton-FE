@@ -41,6 +41,10 @@
   }
 }
 
+.noUnderline {
+  text-decoration: none;
+}
+
 .navLogo {
   color: var(--text-color-main);
   text-align: center;
@@ -85,7 +89,7 @@
   background-color: var(--glass-shadow-color);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
   .hamburger {
     display: block;
   }

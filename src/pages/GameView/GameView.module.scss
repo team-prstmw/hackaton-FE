@@ -1,259 +1,265 @@
+@import "../../theme.module.scss";
+
 .GameView {
-    background: linear-gradient(45deg, rgba(37, 195, 205, 1) 0%, rgba(12, 149, 226, 0.79) 50%, rgba(0, 49, 250, 1) 100%);
-    color: #fff;
-    height: 100vh;
+  color: var(--text-color-main);
 
-    .title {
-        font-size: 2.5rem;
-        padding-top: 3rem;
-        text-align: center;
-        margin-bottom: 2.5rem;
+  .title {
+    font-size: 2.5rem;
+    padding-top: 3rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .information {
+    text-align: center;
+    padding: 0 200px;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .note {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+    .buttonTrue {
+      background: linear-gradient(
+        45deg,
+        rgba(5, 255, 0, 0.28) 0%,
+        rgba(5, 255, 0, 0.46) 100%
+      );
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-right: 8rem;
+      width: 25rem;
+      height: 8rem;
+      border-radius: 1.5rem;
+      color: var(--text-color-main);
+      border: 1px solid rgba(5, 255, 0, 0.28);
+      box-shadow: 4px 4px 2px var(--glass-shadow-color);
     }
 
-    .information {
-        text-align: center;
-        padding: 0 200px;
-        margin: 0 auto;
-        font-weight: bold;
-        font-size: 1.2rem;
-        line-height: 2rem;
-        margin-bottom: 2rem;
+    .buttonTrue:hover {
+      background: #0cd50cc7;
+      cursor: pointer;
     }
 
-    .note {
-        text-align: center;
-        font-size: 1rem;
-        font-weight: bold;
-        letter-spacing: 0.1rem;
-
-        a{
-            text-decoration: none;
-        }
+    .buttonFalse {
+      background: linear-gradient(
+        225deg,
+        rgba(239, 25, 25, 0.912) 0%,
+        rgba(249, 28, 28, 0.723) 82%,
+        rgba(243, 34, 34, 0.602) 100%
+      );
+      font-size: 4.5rem;
+      font-weight: 700;
+      width: 25rem;
+      height: 8rem;
+      border-radius: 1.5rem;
+      color: var(--text-color-main);
+      border: 1px solid rgba(239, 25, 25, 0.76);
+      box-shadow: 4px 4px 2px var(--glass-shadow-color);
     }
 
-    .buttons {
-        display: flex;
-        justify-content: center;
-        margin-top: 5rem;
-
-        .buttonTrue {
-            background: linear-gradient(45deg, rgba(5, 255, 0, 0.28) 0%, rgba(5, 255, 0, 0.46) 100%);
-            font-size: 4.5rem;
-            margin-right: 8rem;
-            width: 25rem;
-            height: 8rem;
-            border-radius: 1.5rem;
-            color: #fff;
-        }
-
-        .buttonTrue:hover {
-            background: #00ff00af;
-            cursor: pointer;
-        }
-
-        .buttonFalse {
-            background: linear-gradient(225deg, rgba(255, 0, 0, 0.76) 0%, rgba(255, 0, 0, 0.61) 82%, rgba(255, 0, 0, 0.47) 100%);
-            font-size: 4.5rem;
-            width: 25rem;
-            height: 8rem;
-            border-radius: 1.5rem;
-            color: #fff;
-        }
-
-        .buttonFalse:hover {
-            background: #ff0000;
-            cursor: pointer;
-        }
+    .buttonFalse:hover {
+      background: #df0000cf;
+      cursor: pointer;
     }
+  }
 }
 
 @media screen and (min-width: 320px) {
-    .GameView {
-        .title {
-            font-size: 1.5rem;
-            padding-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .information {
-            padding: 0 10px;
-            font-size: 1rem;
-            line-height: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .note {
-            font-size: 1rem;
-            letter-spacing: 0rem;
-        }
-
-        .buttons {
-            margin-top: 2rem;
-
-            .buttonTrue {
-                font-size: 1.2rem;
-                margin-right: 2rem;
-                width: 6rem;
-                height: 3rem;
-                border-radius: 1rem;
-            }
-
-            .buttonFalse {
-                font-size: 1.2rem;
-                width: 6rem;
-                height: 3rem;
-                border-radius: 1rem;
-            }
-        }
+  .GameView {
+    .title {
+      font-size: 1.5rem;
+      padding-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
+
+    .information {
+      padding: 0 10px;
+      font-size: 1rem;
+      line-height: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .note {
+      font-size: 1rem;
+      letter-spacing: 0rem;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+
+      .buttonTrue {
+        font-size: 1.2rem;
+        margin-right: 2rem;
+        width: 6rem;
+        height: 3rem;
+        border-radius: 1rem;
+      }
+
+      .buttonFalse {
+        font-size: 1.2rem;
+        width: 6rem;
+        height: 3rem;
+        border-radius: 1rem;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 480px) {
-    .GameView {
-        .title {
-            font-size: 1.8rem;
-            padding-top: 1.8rem;
-            margin-bottom: 1.8rem;
-        }
-
-        .information {
-            padding: 0 50px;
-            line-height: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .note {
-            font-size: 1.2rem;
-        }
-
-        .buttons {
-            margin-top: 4.5rem;
-
-            .buttonTrue {
-                font-size: 1.8rem;
-                margin-right: 4rem;
-                width: 9rem;
-                height: 4.5rem;
-                border-radius: 1.5rem;
-            }
-
-            .buttonFalse {
-                font-size: 1.8rem;
-                width: 9rem;
-                height: 4.5rem;
-                border-radius: 1.5rem;
-            }
-        }
+  .GameView {
+    .title {
+      font-size: 1.8rem;
+      padding-top: 1.8rem;
+      margin-bottom: 1.8rem;
     }
+
+    .information {
+      padding: 0 50px;
+      line-height: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .note {
+      font-size: 1.2rem;
+    }
+
+    .buttons {
+      margin-top: 4.5rem;
+
+      .buttonTrue {
+        font-size: 1.8rem;
+        margin-right: 4rem;
+        width: 9rem;
+        height: 4.5rem;
+        border-radius: 1.5rem;
+      }
+
+      .buttonFalse {
+        font-size: 1.8rem;
+        width: 9rem;
+        height: 4.5rem;
+        border-radius: 1.5rem;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .GameView {
-
-        .title {
-            font-size: 2.5rem;
-            padding-top: 3rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .information {
-            padding: 0 100px;
-            font-size: 1.2rem;
-            line-height: 1.2rem;
-        }
-
-        .note {
-            font-size: 1rem;
-            letter-spacing: 0.1rem;
-        }
-
-        .buttons {
-            margin-top: 2.5rem;
-
-            .buttonTrue {
-                font-size: 2.5rem;
-                margin-right: 5rem;
-                width: 15rem;
-                height: 6rem;
-            }
-
-            .buttonFalse {
-                font-size: 2.5rem;
-                width: 15rem;
-                height: 6rem;
-            }
-        }
+  .GameView {
+    .title {
+      font-size: 2.5rem;
+      padding-top: 3rem;
+      margin-bottom: 2.5rem;
     }
+
+    .information {
+      padding: 0 100px;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+
+    .note {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .buttons {
+      margin-top: 2.5rem;
+
+      .buttonTrue {
+        font-size: 2.5rem;
+        margin-right: 5rem;
+        width: 15rem;
+        height: 6rem;
+      }
+
+      .buttonFalse {
+        font-size: 2.5rem;
+        width: 15rem;
+        height: 6rem;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 992px) {
-    .GameView {
-
-        .information {
-            padding: 0 100px;
-            font-size: 1.2rem;
-            line-height: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .note {
-            font-size: 1rem;
-            font-weight: bold;
-            letter-spacing: 0.1rem;
-        }
-
-        .buttons {
-
-            margin-top: 5rem;
-
-            .buttonTrue {
-                font-size: 3.5rem;
-                margin-right: 7rem;
-                width: 18rem;
-                height: 6.5rem;
-                border-radius: 1.5rem;
-            }
-
-            .buttonFalse {
-                font-size: 3.5rem;
-                width: 18rem;
-                height: 6.5rem;
-                border-radius: 1.5rem;
-            }
-        }
+  .GameView {
+    .information {
+      padding: 0 100px;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      margin-bottom: 2rem;
     }
+
+    .note {
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
+
+    .buttons {
+      margin-top: 5rem;
+
+      .buttonTrue {
+        font-size: 3.5rem;
+        margin-right: 7rem;
+        width: 18rem;
+        height: 6.5rem;
+        border-radius: 1.5rem;
+      }
+
+      .buttonFalse {
+        font-size: 3.5rem;
+        width: 18rem;
+        height: 6.5rem;
+        border-radius: 1.5rem;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .GameView {
-
-        .information {
-            padding: 0 200px;
-        }
-
-        .buttons {
-            margin-top: 5rem;
-
-            .buttonTrue {
-                font-size: 4.5rem;
-                margin-right: 8rem;
-                width: 25rem;
-                height: 8rem;
-                border-radius: 1.5rem;
-            }
-
-            .buttonTrue:hover {
-                background: #00ff00af;
-                cursor: pointer;
-            }
-
-            .buttonFalse {
-                font-size: 4.5rem;
-                width: 25rem;
-                height: 8rem;
-                border-radius: 1.5rem;
-            }
-
-        }
+  .GameView {
+    .information {
+      padding: 0 200px;
     }
+
+    .buttons {
+      margin-top: 5rem;
+
+      .buttonTrue {
+        font-size: 4.5rem;
+        margin-right: 8rem;
+        width: 25rem;
+        height: 8rem;
+        border-radius: 1.5rem;
+      }
+
+      .buttonTrue:hover {
+        background: #00ff00af;
+        cursor: pointer;
+      }
+
+      .buttonFalse {
+        font-size: 4.5rem;
+        width: 25rem;
+        height: 8rem;
+        border-radius: 1.5rem;
+      }
+    }
+  }
 }
