@@ -29,7 +29,7 @@ export function Navbar() {
         <Link className={styles.navLinks} to="/quiz">
           Graj
         </Link>
-        <Link className={styles.navLinks} to="">
+        <Link className={styles.navLinks} to="/rules">
           Zasady
         </Link>
         <Link className={styles.navLinks} to="/top_scores">
