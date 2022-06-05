@@ -26,12 +26,11 @@ const NewQuestionPage = () => {
     resolver: yupResolver(NewQuestionValidation),
     mode: "onTouched",
   });
-  const { handleSubmit } = methods;
+  const { handleSubmit, reset } = methods;
 
   const { mutate: apiSend } = useApiSend();
 
   function onSubmit(data: NewQuestionData) {
-    console.log("tut")
     const { answers: dataAnswer } = data;
     const answers = [
       {
@@ -40,9 +39,9 @@ const NewQuestionPage = () => {
       },
     ];
     const payload = { ...data, answers };
-    console.log(payload);
 
     apiSend({ path: CREATE_QUESTION_ENDPOINT, data: payload });
+    reset()
   }
 
   const data = (
