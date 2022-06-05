@@ -4,12 +4,16 @@
     height: 100vh;
     overflow: hidden;
 
+    display: flex;
+    flex-direction: column;
+
     .squereScore {
         width: 65rem;
         height: fit-content;
         background: linear-gradient(225deg, rgba(253, 253, 253, 0.5) 0%, rgba(253, 253, 253, 0.42) 45%, rgba(253, 253, 253, 0.28) 100%);
-        margin: 5rem auto 0 auto;
+        margin: auto;
         border-radius: 2rem;
+        box-shadow: 4px 4px 4px var(--glass-shadow-color);
     }
 
     .title {
@@ -33,19 +37,20 @@
     .form {
         width: 20rem;
         margin: 0 auto;
-        margin-top: 4rem;
+        margin-top: 2rem;
     }
 
     .label {
         font-size: 1.2rem;
         font-weight: bold;
     }
-
+    
     .input {
         width: 90%;
         height: 2rem;
         margin-bottom: 1.2rem;
         font-size: 1.2rem;
+        margin-top: 0.5rem;
     }
 
     .button {
@@ -59,9 +64,7 @@
 @media screen and (min-width: 320px) {
     .GameOver {
         .squereScore {
-            width: 15rem;
-            // height: 18rem;
-            margin: 10rem auto 0 auto;
+            width: 19rem;
         }
 
         .title {
@@ -99,9 +102,7 @@
     .GameOver {
 
         .squereScore {
-            width: 25rem;
-            // height: 30rem;
-            margin: 8rem auto 0 auto;
+            width: 29rem;
         }
 
         .title {
@@ -141,8 +142,6 @@
 
         .squereScore {
             width: 45rem;
-            // height: 35rem;
-            margin: 5rem auto 0 auto;
         }
     }
 }
