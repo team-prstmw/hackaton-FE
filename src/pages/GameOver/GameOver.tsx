@@ -4,6 +4,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { useApiSend } from "../../hooks/useApi";
 import { SCORES_ENDPOINT } from "../../urls/api";
 import styles from "./GameOver.module.scss";
+import { SkillBar } from "../../components/SkillBar/SkillBar";
 
 interface GameOverProps {
   score: number;
@@ -38,10 +39,21 @@ function GameOver({ score }: GameOverProps) {
       <Navbar />
 
       <div className={styles.squereScore}>
-        <h3 className={styles.title}>Your Score {score}/10</h3>
+        <h3 className={styles.title}>Wynik {score}/10</h3>
         <p className={styles.link}>
-          Link to the websites how to avoid fake news
+          <a
+            href="https://www.gov.pl/web/baza-wiedzy/rozpoznawanie-nieprawdziwych-informacji"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rozpoznawanie nieprawdziwych informacji
+          </a>
         </p>
+
+        <div>
+          <SkillBar category="CodersCamp" level={(score / 10) * 100} />
+        </div>
+
         <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label} htmlFor="name">
             Podaj swoje imię:{" "}

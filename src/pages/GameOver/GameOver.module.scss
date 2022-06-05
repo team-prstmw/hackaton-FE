@@ -6,7 +6,7 @@
 
     .squereScore {
         width: 65rem;
-        height: 35rem;
+        height: fit-content;
         background: linear-gradient(225deg, rgba(253, 253, 253, 0.5) 0%, rgba(253, 253, 253, 0.42) 45%, rgba(253, 253, 253, 0.28) 100%);
         margin: 5rem auto 0 auto;
         border-radius: 2rem;
@@ -22,7 +22,12 @@
     .link {
         text-align: center;
         font-weight: bold;
-        padding-top: 4rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
     }
 
     .form {
@@ -47,6 +52,7 @@
         padding: 0.5rem;
         border-radius: 0.4rem;
         cursor: pointer;
+        margin-bottom: 1rem;
     }
 }
 
@@ -54,7 +60,7 @@
     .GameOver {
         .squereScore {
             width: 15rem;
-            height: 18rem;
+            // height: 18rem;
             margin: 10rem auto 0 auto;
         }
 
@@ -94,7 +100,7 @@
 
         .squereScore {
             width: 25rem;
-            height: 30rem;
+            // height: 30rem;
             margin: 8rem auto 0 auto;
         }
 
@@ -135,7 +141,7 @@
 
         .squereScore {
             width: 45rem;
-            height: 35rem;
+            // height: 35rem;
             margin: 5rem auto 0 auto;
         }
     }
