@@ -15,7 +15,7 @@ import { Card } from "../../components/Card/Card";
 
 interface NewQuestionData {
   content: string;
-  answer: boolean;
+  answers: boolean;
   explanation: string;
   category: typeof CATEGORIES;
   link: string;
@@ -28,17 +28,19 @@ const NewQuestionPage = () => {
   });
   const { handleSubmit } = methods;
 
-  const { mutate: apiSend, isSuccess, isError } = useApiSend();
+  const { mutate: apiSend } = useApiSend();
 
   function onSubmit(data: NewQuestionData) {
-    const { answer: dataAnswer } = data;
-    const answer = [
+    console.log("tut")
+    const { answers: dataAnswer } = data;
+    const answers = [
       {
         content: "True",
         correct: dataAnswer,
       },
     ];
-    const payload = { ...data, answer };
+    const payload = { ...data, answers };
+    console.log(payload);
 
     apiSend({ path: CREATE_QUESTION_ENDPOINT, data: payload });
   }
@@ -54,12 +56,12 @@ const NewQuestionPage = () => {
           <Textarea id="content" label="Pytanie" />
         </div>
         <div>
-          <Label htmlFor="answer">Odpowiedź</Label>
+          <Label htmlFor="answers">Odpowiedź</Label>
           <div className={styles.answersContainer}>
             <Label>Prawda</Label>
-            <Input id="answer" type="radio" value="true" checked />
+            <Input id="answers" type="radio" value="true" checked />
             <Label>Fałsz</Label>
-            <Input id="answer" type="radio" value="false" />
+            <Input id="answers" type="radio" value="false" />
           </div>
         </div>
         <div>
