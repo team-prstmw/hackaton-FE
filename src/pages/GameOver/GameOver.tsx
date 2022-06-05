@@ -39,14 +39,19 @@ function GameOver({ score }: GameOverProps) {
       <Navbar />
 
       <div className={styles.squereScore}>
-        <h3 className={styles.title}>Your Score {score}/10</h3>
+        <h3 className={styles.title}>Wynik {score}/10</h3>
         <p className={styles.link}>
-          Link to the websites how to avoid fake news
+          <a
+            href="https://www.gov.pl/web/baza-wiedzy/rozpoznawanie-nieprawdziwych-informacji"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rozpoznawanie nieprawdziwych informacji
+          </a>
         </p>
+
         <div>
-          <SkillBar category="Polityka" level={50} />
-          <SkillBar category="Polityka" level={50} />
-          <SkillBar category="Polityka" level={50} />
+          <SkillBar category="CodersCamp" level={(score / 10) * 100} />
         </div>
 
         <form className={styles.form} onSubmit={handleSubmit}>

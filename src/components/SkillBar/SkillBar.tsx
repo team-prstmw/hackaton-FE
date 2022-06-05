@@ -2,7 +2,13 @@
 import { useEffect, useRef } from "react";
 import styles from "./SkillBar.module.scss";
 
-export function SkillBar({ category, level }: { category: string; level: number }) {
+export function SkillBar({
+  category,
+  level,
+}: {
+  category: string;
+  level: number;
+}) {
   const skillBar = useRef(null);
 
   function changeSkillBarColor() {
@@ -19,6 +25,14 @@ export function SkillBar({ category, level }: { category: string; level: number 
     }
   }
 
+  const showResult = () => {
+    if (level < 50) {
+      return "Wracaj na kurs!";
+    } else if (level < 80) {
+      return "Jesteś dobry w rozpoznawaniu fake newsów!";
+    } else return "Świetnie radzisz sobie z rozpoznawaniem fake newsów!";
+  };
+
   useEffect(() => {
     changeSkillBarColor();
   });
@@ -29,6 +43,7 @@ export function SkillBar({ category, level }: { category: string; level: number 
       <div ref={skillBar} className={styles.skillBarLevel}>
         {level + "%"}
       </div>
+      <h2>{showResult()}</h2>
     </div>
   );
 }
