@@ -1,4 +1,4 @@
-export const CATEGORIES = ["Wiadomości", "Pandemia"] as [
-  "Wiadomości",
-  "Pandemia"
+export const CATEGORIES = ["CodersCamp", "Wiadomości"] as [
+  "CodersCamp",
+  "Wiadomości"
 ];

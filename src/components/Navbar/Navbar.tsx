@@ -30,9 +30,9 @@ export function Navbar() {
             : styles.navLinksContainer
         }
       >
-        <Link className={styles.navLinks} to="/quiz">
+        <a className={styles.navLinks} href="/quiz">
           Graj
-        </Link>
+        </a>
         <Link className={styles.navLinks} to="/rules">
           Zasady
         </Link>
