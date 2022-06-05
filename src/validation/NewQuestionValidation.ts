@@ -4,7 +4,7 @@ import { ONE_OF_CHOICES_MESSAGE, REQUIRED_MESSAGE } from "./messages";
 
 const NewQuestionValidation = Yup.object({
   content: Yup.string().required(REQUIRED_MESSAGE),
-  answer: Yup.boolean().required(REQUIRED_MESSAGE),
+  answers: Yup.boolean().required(REQUIRED_MESSAGE),
   explanation: Yup.string().required(REQUIRED_MESSAGE),
   category: Yup.string()
     .oneOf(CATEGORIES, ONE_OF_CHOICES_MESSAGE)
