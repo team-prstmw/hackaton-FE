@@ -35,7 +35,18 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 715px) {
+  .form {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .form {
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 400px) {
   .form {
     width: 100%;
   }
