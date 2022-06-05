@@ -28,7 +28,13 @@ function GameView({score, setScore, questID, setQuestId}: GameViewProps) {
   const { data, isFetched } = useApiGet({ path: `questions` });
 
   useEffect(() => {
-    data && setQuestions(data.data);
+
+    if(data) {
+      const fetchedQuest = data.data
+      const shuffled = fetchedQuest.sort(() => 0.5 - Math.random());
+      setQuestions(shuffled);
+    }
+
   }, [isFetched]);
 
 
