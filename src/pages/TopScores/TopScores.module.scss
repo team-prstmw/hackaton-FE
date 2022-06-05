@@ -26,3 +26,29 @@
 
   display: flex;
 }
+
+@media screen and (max-width: 840px) {
+  .glassPadding {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .glassPadding {
+    padding: 0.5rem 1rem;
+  }
+
+  .scoresTable {
+    min-width: 25rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .glassPadding {
+    padding: 0;
+  }
+
+  .scoresTable {
+    min-width: 20rem;
+  }
+}

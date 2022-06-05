@@ -10,25 +10,95 @@
     var(--bg-color-gradient-three) 100%
   );
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   text-align: center;
   color: var(--text-color-main);
+  position: relative;
 
   font-family: "Roboto", sans-serif;
+
+  .homepageText {
+    max-width: 50rem;
+    padding: 2rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  .fnnName {
+    margin-top: 5rem;
+    margin-bottom: 7.5rem;
+  }
 
   .fnn {
     font-family: "Merienda", cursive;
     font-size: 5.625rem;
+    position: relative;
   }
 
   .fnnDesc {
-    font-size: 1.5625rem;
+    position: relative;
+    margin-top: -1rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .missinf {
-    align-self: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 900px) {
+    .centerCard {
+      display: flex;
+      justify-content: center;
+    }
+
+    .missinf {
+      width: 90%;
+    }
+
+    .fnnName {
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .missinf {
+      margin-bottom: 1.5rem;
+    }
+
+    .fnnName {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.home__canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.8;
+  margin: 0;
+  padding: 0;
+
+  .gradient_canvas {
+    width: 100%;
+    height: 100%;
+    --gradient-color-1: var(--bg-color-gradient-one);
+    --gradient-color-2: var(--bg-color-gradient-two);
+    --gradient-color-3: var(--bg-color-gradient-three);
+    --gradient-color-4: var(--text-color-dark);
+    z-index: 0;
+    margin: 0;
+    padding: 0;
   }
 }

@@ -1,5 +1,8 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
+import { useApiSend } from "../../hooks/useApi";
+import { SCORES_ENDPOINT } from "../../urls/api";
 import styles from "./GameOver.module.scss";
 import { SkillBar } from "../../components/SkillBar/SkillBar";
 
@@ -9,11 +12,27 @@ interface GameOverProps {
 
 function GameOver({ score }: GameOverProps) {
   const [name, setName] = useState<string>("");
-  console.log(score);
+  const [disabled, setDiseabled] = useState<boolean>(true);
+
+  const navigate = useNavigate();
+
+  const { mutate: apiSend, isSuccess } = useApiSend();
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setDiseabled(true);
     setName("");
+
+    const payload = {
+      username: name,
+      score: score,
+    };
+    apiSend({ path: SCORES_ENDPOINT, data: payload });
   };
+
+  useEffect(() => {
+    isSuccess && navigate("/top_scores");
+  }, [navigate, isSuccess]);
 
   return (
     <div className={styles.GameOver}>
@@ -39,10 +58,18 @@ function GameOver({ score }: GameOverProps) {
             type="text"
             id="name"
             value={name}
-            onChange={(event) => setName(event.target.value)}
+            onChange={(event) => {
+              setDiseabled(false);
+              setName(event.target.value);
+            }}
           />
-          <button type="submit" className={styles.button}>
-            Save your score
+          <button
+            disabled={disabled}
+            type="submit"
+            style={{ cursor: `${disabled ? "default" : "pointer"}` }}
+            className={styles.button}
+          >
+            Zapisz swój wynik
           </button>
         </form>
       </div>
