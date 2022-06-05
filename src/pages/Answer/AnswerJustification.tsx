@@ -14,16 +14,12 @@ export function AnswerJustification({ questID }: AnswerJustificationProps) {
 
   const { data } = useApiGet({ path: `/questions/${questID}` });
   useEffect(() => {
-    fetchData();
-  }, [justification, explanationLink]);
-  
-  const fetchData = () => {
     if(data){
       setJustification(data.explanation);
       setExplanationLink(data.link);
     }
-  };
-
+  }, [data]);
+  
   return (
     <div className={styles.answerJustificationPage}>
       <Navbar />
