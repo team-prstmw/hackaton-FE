@@ -18,8 +18,10 @@ export function AnswerJustification({ questID }: AnswerJustificationProps) {
   }, [justification, explanationLink]);
   
   const fetchData = () => {
-    setJustification(data.explanation);
-    setExplanationLink(data.link);
+    if(data){
+      setJustification(data.explanation);
+      setExplanationLink(data.link);
+    }
   };
 
   return (
