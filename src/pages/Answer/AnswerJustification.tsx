@@ -10,13 +10,13 @@ interface AnswerJustificationProps {
 
 export function AnswerJustification({ questID }: AnswerJustificationProps) {
   const [justification, setJustification] = useState<string>("");
-  const [explanationLink, setExplanationLink] = useState("");
-
+  const [explanationLink, setExplanationLink] = useState<string>("");
   const { data } = useApiGet({ path: `/questions/${questID}` });
+
   useEffect(() => {
     if(data){
-      setJustification(data.explanation);
-      setExplanationLink(data.link);
+      setJustification(data.data.explanation);
+      setExplanationLink(data.data.link);
     }
   }, [data]);
   

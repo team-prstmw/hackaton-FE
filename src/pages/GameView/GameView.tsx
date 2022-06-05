@@ -10,6 +10,7 @@ interface GameViewProps{
   setScore: Dispatch<SetStateAction<number>>
   questID: number;
   setQuestId: Dispatch<SetStateAction<number>>
+  setIds: Dispatch<SetStateAction<number>>
 }
 
 type questionProps = {
@@ -21,20 +22,19 @@ type questionProps = {
     content: string;
     correct: boolean;
   }[]
+  _id: number;
 }
 
-function GameView({score, setScore, questID, setQuestId}: GameViewProps) {
+function GameView({score, setScore, questID, setQuestId, setIds}: GameViewProps) {
   const [questions, setQuestions] = useState<questionProps[]>([])
   const { data, isFetched } = useApiGet({ path: `questions` });
 
   useEffect(() => {
-
     if(data) {
       const fetchedQuest = data.data
       const shuffled = fetchedQuest.sort(() => 0.5 - Math.random());
       setQuestions(shuffled);
     }
-
   }, [isFetched]);
 
 
@@ -67,8 +67,9 @@ function GameView({score, setScore, questID, setQuestId}: GameViewProps) {
     <div className={styles.GameView}>
       <Navbar />
 
-      {questions.map(({content, answers}, id) => {
+      {questions.map(({content, answers, _id}, id) => {
         if (questID === id && questID < 10) {
+          setIds(_id);
           if (answers[0].correct !== answer) {
             setAnswer(answers[0].correct);
           }
