@@ -26,7 +26,7 @@ type questionProps = {
 function GameView({score, setScore, questID, setQuestId}: GameViewProps) {
   const [questions, setQuestions] = useState<questionProps[]>([])
   const { data, isFetched } = useApiGet({ path: `questions` });
-  console.log(questions);
+
   useEffect(() => {
     data && setQuestions(data.data);
   }, [isFetched]);
@@ -62,7 +62,7 @@ function GameView({score, setScore, questID, setQuestId}: GameViewProps) {
       <Navbar />
 
       {questions.map(({content, answers}, id) => {
-        if (questID === id) {
+        if (questID === id && questID < 10) {
           if (answers[0].correct !== answer) {
             setAnswer(answers[0].correct);
           }
@@ -86,6 +86,9 @@ function GameView({score, setScore, questID, setQuestId}: GameViewProps) {
               </div>
             </div>
           );
+        } 
+        if(questID > 9) {
+          navigate("/score")
         }
       })}
     </div>
