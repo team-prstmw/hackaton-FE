@@ -17,6 +17,7 @@ const queryClient = new QueryClient();
 function App() {
   const [score, setScore] = useState<number>(0);
   const [questID, setQuestId] = useState<number>(0);
+  const [countTask, setCountTask] = useState<number>(0);
   const [ids, setIds] = useState<number>(0);
 
   return (
@@ -31,9 +32,9 @@ function App() {
             />
             <Route
               path="/quiz"
-              element={<GameView score={score} setScore={setScore} questID={questID} setQuestId={setQuestId} setIds={setIds}/>}
+              element={<GameView score={score} setScore={setScore} questID={questID} setQuestId={setQuestId} setIds={setIds} setCountTask={setCountTask}/>}
             />
-            <Route path="/score" element={<GameOver score={score} />} />
+            <Route path="/score" element={<GameOver score={score} countTask={countTask}/>} />
             <Route path="/top_scores" element={<TopScores />} />
             <Route path={NEW_QUESTION_PAGE} element={<NewQuestionPage />} />
             <Route path="/rules" element={<RulesPage />} />

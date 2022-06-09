@@ -8,9 +8,10 @@ import { SkillBar } from "../../components/SkillBar/SkillBar";
 
 interface GameOverProps {
   score: number;
+  countTask: number;
 }
 
-function GameOver({ score }: GameOverProps) {
+function GameOver({ score, countTask }: GameOverProps) {
   const [name, setName] = useState<string>("");
   const [disabled, setDiseabled] = useState<boolean>(true);
 
@@ -39,7 +40,7 @@ function GameOver({ score }: GameOverProps) {
       <Navbar />
 
       <div className={styles.squereScore}>
-        <h3 className={styles.title}>Wynik {score}/10</h3>
+        <h3 className={styles.title}>Wynik {score}/{countTask}</h3>
         <p className={styles.link}>
           <a
             href="https://www.gov.pl/web/baza-wiedzy/rozpoznawanie-nieprawdziwych-informacji"

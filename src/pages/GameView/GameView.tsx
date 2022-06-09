@@ -11,6 +11,8 @@ interface GameViewProps{
   questID: number;
   setQuestId: Dispatch<SetStateAction<number>>
   setIds: Dispatch<SetStateAction<number>>
+  countTask: number;
+  setCountTask: Dispatch<SetStateAction<number>>
 }
 
 type questionProps = {
@@ -25,7 +27,7 @@ type questionProps = {
   _id: number;
 }
 
-function GameView({score, setScore, questID, setQuestId, setIds}: GameViewProps) {
+function GameView({score, setScore, questID, setQuestId, setIds, countTask, setCountTask}: GameViewProps) {
   const [questions, setQuestions] = useState<questionProps[]>([])
   const { data, isFetched } = useApiGet({ path: `questions` });
 
@@ -38,6 +40,23 @@ function GameView({score, setScore, questID, setQuestId, setIds}: GameViewProps)
   }, [isFetched]);
 
 
+
+  
+
+
+
+  if(questions.length < 11){
+    setCountTask(questions.length)
+  } else {
+    setCountTask(10);
+  }
+
+
+
+
+
+
+
   const [answer, setAnswer] = useState<boolean | null>(null);
   const navigate = useNavigate();
  
@@ -46,7 +65,7 @@ function GameView({score, setScore, questID, setQuestId, setIds}: GameViewProps)
     if (answer === true) {
       setScore(score + 1);
     }
-    <GameOver score={score}/>
+    <GameOver score={score} countTask={countTask} />
     if (questID === questions.length - 1) {
       navigate("/score")
     }
@@ -58,7 +77,7 @@ function GameView({score, setScore, questID, setQuestId, setIds}: GameViewProps)
       setScore(score + 1);
     }
     if (questID === questions.length - 1) {
-      <GameOver score={score}/>
+      <GameOver score={score} countTask={countTask} />
       navigate("/score")
     }
   };
