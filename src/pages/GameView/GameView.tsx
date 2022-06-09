@@ -39,23 +39,11 @@ function GameView({score, setScore, questID, setQuestId, setIds, countTask, setC
     }
   }, [isFetched]);
 
-
-
-  
-
-
-
   if(questions.length < 11){
     setCountTask(questions.length)
   } else {
     setCountTask(10);
   }
-
-
-
-
-
-
 
   const [answer, setAnswer] = useState<boolean | null>(null);
   const navigate = useNavigate();
